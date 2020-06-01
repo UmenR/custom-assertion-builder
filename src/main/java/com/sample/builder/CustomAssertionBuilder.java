@@ -146,8 +146,8 @@ public class CustomAssertionBuilder extends DefaultSAMLAssertionBuilder {
     }
 
     private Boolean shouldReturnCustomValue(String claimUri){
-        if(Arrays.asList(targetClaimUris).contains(claimUri) && requestUserStoreDomain.equals(targetUserStoreDomain) &&
-        requestIssuer.equals(targetIssuer) && requestTenantDomain.equals(targetTenantDomain)) {
+        if(requestUserStoreDomain.equals(targetUserStoreDomain) && requestIssuer.equals(targetIssuer) &&
+           requestTenantDomain.equals(targetTenantDomain) && Arrays.asList(targetClaimUris).contains(claimUri)) {
             return  true;
         }
         return false;
